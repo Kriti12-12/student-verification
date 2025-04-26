@@ -1,0 +1,192 @@
+body {
+  margin-top: 100px;
+}
+
+body {
+    position: absolute;
+    inset: -1em;
+    --c: 7px;
+    background-color: #000;
+    background-image: radial-gradient(
+        circle at 50% 50%,
+        #0000 1.5px,
+        #000 0 var(--c),
+        #0000 var(--c)
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        #0000 1.5px,
+        #000 0 var(--c),
+        #0000 var(--c)
+      ),
+      radial-gradient(circle at 50% 50%, #f00, #f000 60%),
+      radial-gradient(circle at 50% 50%, #ff0, #ff00 60%),
+      radial-gradient(circle at 50% 50%, #0f0, #0f00 60%),
+      radial-gradient(ellipse at 50% 50%, #00f, #00f0 60%);
+    background-size:
+      12px 20.7846097px,
+      12px 20.7846097px,
+      200% 200%,
+      200% 200%,
+      200% 200%,
+      200% 20.7846097px;
+    --p: 0px 0px, 6px 10.39230485px;
+    background-position:
+      var(--p),
+      0% 0%,
+      0% 0%,
+      0% 0px;
+    animation:
+      wee 40s linear infinite,
+      filt 6s linear infinite;
+  }
+  
+  @keyframes filt {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  @keyframes wee {
+    0% {
+      background-position:
+        var(--p),
+        800% 400%,
+        1000% -400%,
+        -1200% -600%,
+        400% 41.5692194px;
+    }
+    to {
+      background-position:
+        var(--p),
+        0% 0%,
+        0% 0%,
+        0% 0%,
+        0% 0%;
+    }
+  }
+
+
+h1 {
+    color: black;
+    font-family: cursive;
+    text-align: center;
+    font-weight: bolder;
+    background-color: #fff;
+    border-radius: 100%;
+    height: 120px;
+    transition: background 300ms, color 300ms;
+    opacity: 0.5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 5px, dotted, black;
+}
+
+button {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+   }
+   
+   button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+
+.pattern {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 20px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .pattern::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(25px);
+    border-radius: 20px;
+    background-color: #e499ff;
+    background-image: radial-gradient(at 47% 69%, hsla(17,62%,65%,1) 0px, transparent 50%),
+  radial-gradient(at 9% 32%, hsla(222,75%,60%,1) 0px, transparent 50%);
+  }
+  
+  .label_pattern {
+    display: block;
+    margin-left: 0.4em;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: left;
+    font-family: cursive;
+  }
+  
+  input {
+    border: none;
+    outline: none;
+    width: 280px;
+    padding: 0.6em;
+    padding-left: 0.9em;
+    border-radius: 20px;
+    background: rgba(225, 225, 225, 0.9);
+    transition: background 300ms, color 300ms;
+    opacity: 0.5;
+    font-family: cursive;
+  }
+  
+  input:hover,.input:focus {
+    background: rgb(0, 0, 0);
+    color: #fff;
+  }
